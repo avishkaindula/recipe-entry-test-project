@@ -14,4 +14,30 @@ const getAllRecipes = async (req, res, next) => {
   return res.status(200).json({ recipes });
 };
 
+const addRecipe = async (req, res, next) => {
+  let recipe;
+  try {
+    let ingredients = req.body.ingredients
+      .split(",")
+      .map((skill) => skill.trim());
+    // This will extract the comma separated ingredients and add them as values of an array.
+
+    recipe = new Recipe({
+      name: req.body.name,
+      description: req.body.description,
+      image: req.body.image,
+      ingredients: ingredients,
+    });
+    await recipe.save();
+  } catch (err) {
+    console.log(err);
+  }
+
+  if (!recipe) {
+    return res.status(500).json({ message: "Unable To Add" });
+  }
+  return res.status(201).json({ recipe });
+};
+
 exports.getAllRecipes = getAllRecipes;
+exports.addRecipe = addRecipe;

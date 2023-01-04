@@ -8,10 +8,16 @@ const recipeSchema = new Schema({
     required: true,
   },
   ingredients: {
-    type: String,
+    type: [String],
+    // As we extract the ingredients as comma separated values of an array,
+    // we need to add String inside [] like this.
     required: true,
   },
   description: {
+    type: String,
+    required: true,
+  },
+  image: {
     type: String,
     required: true,
   },

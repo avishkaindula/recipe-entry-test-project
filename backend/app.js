@@ -7,6 +7,7 @@ const router = require("./routes/recipe-routes");
 const app = express();
 
 // Middlewares
+app.use(express.json());
 app.use("/recipes", router);
 
 // Connecting to the MongoDB database and app.listen.
