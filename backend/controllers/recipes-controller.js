@@ -53,6 +53,38 @@ const addRecipe = async (req, res, next) => {
   return res.status(201).json({ recipe });
 };
 
+const updateRecipe = async (req, res, next) => {
+  const id = req.params.id;
+  let recipe;
+  let ingredients;
+  try {
+    if (req.body.ingredients) {
+      ingredients = req.body.ingredients
+        .split(",")
+        .map((skill) => skill.trim());
+    }
+    // .split() will throw an error if we don't add ingredients: on the json put request.
+    // to prevent that, we need to create an if block and check whether the request body has ingredients or not.
+
+    recipe = await Recipe.findByIdAndUpdate(id, {
+      name: req.body.name,
+      description: req.body.description,
+      image: req.body.image,
+      ingredients: ingredients,
+    });
+
+    recipe = await recipe.save();
+  } catch (err) {
+    console.log(err);
+  }
+
+  if (!recipe) {
+    return res.status(404).json({ message: "Unable To Update by This ID" });
+  }
+  return res.status(200).json({ recipe });
+};
+
 exports.getAllRecipes = getAllRecipes;
 exports.addRecipe = addRecipe;
 exports.getById = getById;
+exports.updateRecipe = updateRecipe;
