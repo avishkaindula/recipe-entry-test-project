@@ -8,4 +8,7 @@ router.get("/", recipesController.getAllRecipes);
 router.post("/", recipesController.addRecipe);
 // This route will add a new recipe to the database.
 
+router.get("/:id", recipesController.getById);
+// This will get single recipes by id
+
 module.exports = router;

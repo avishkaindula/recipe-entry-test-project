@@ -14,6 +14,20 @@ const getAllRecipes = async (req, res, next) => {
   return res.status(200).json({ recipes });
 };
 
+const getById = async (req, res, next) => {
+  const id = req.params.id;
+  let recipe;
+  try {
+    recipe = await Recipe.findById(id);
+  } catch (err) {
+    console.log(err);
+  }
+  if (!recipe) {
+    return res.status(404).json({ message: "No Book found" });
+  }
+  return res.status(200).json({ recipe });
+};
+
 const addRecipe = async (req, res, next) => {
   let recipe;
   try {
@@ -41,3 +55,4 @@ const addRecipe = async (req, res, next) => {
 
 exports.getAllRecipes = getAllRecipes;
 exports.addRecipe = addRecipe;
+exports.getById = getById;
