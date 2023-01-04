@@ -1,14 +1,15 @@
 const express = require("express");
 const mongoose = require("mongoose");
-
 mongoose.set("strictQuery", false);
+
+const router = require("./routes/recipe-routes");
 
 const app = express();
 
-app.use("/", (req, res, next) => {
-  res.send("This is our starting app");
-});
+// Middlewares
+app.use("/recipes", router);
 
+// Connecting to the MongoDB database and app.listen.
 mongoose
   .connect(
     "mongodb+srv://avishka_indula:p7iGGaREtxbhN3t3@cluster0.oayvkaz.mongodb.net/?retryWrites=true&w=majority"
