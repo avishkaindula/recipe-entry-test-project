@@ -9,17 +9,22 @@ const Header = () => {
     <div>
       <AppBar sx={{ backgroundColor: "#263238" }} position="sticky">
         <Toolbar>
-          <Typography>
-            <LunchDiningOutlinedIcon />
-          </Typography>
-          <Typography variant="h6" sx={{ ml: "2rem" }}>
-            My Recipes
-          </Typography>
+          <NavLink to="/" style={{ color: "white"}}>
+            <Typography>
+              <LunchDiningOutlinedIcon />
+            </Typography>
+          </NavLink>
+          <NavLink to="/" style={{ color: "white", textDecoration: "none" }}>
+            <Typography variant="h6" sx={{ ml: "2rem" }}>
+              My Recipes
+            </Typography>
+          </NavLink>
           <Button
             onClick={() => window.location.reload(false)}
             color="info"
             variant="outlined"
             sx={{ ml: "auto" }}
+            style={{ color: "white" }}
           >
             Refresh
           </Button>

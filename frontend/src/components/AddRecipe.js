@@ -34,7 +34,7 @@ const AddRecipe = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(inputs);
-    sendRequest().then(() => history("/recipes"));
+    sendRequest().then(() => history("/"));
   };
 
   return (
