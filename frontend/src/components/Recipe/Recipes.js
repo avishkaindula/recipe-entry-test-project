@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import "./Recipe.css";
 import axios from "axios";
+import Recipe from "./Recipe";
 const URL = "http://localhost:5000/recipes";
 
 const fetchHandler = async () => {
@@ -13,7 +15,18 @@ const Recipes = () => {
   }, []);
 
   console.log(recipes);
-  return <div>Recipes</div>;
+  return (
+    <div>
+      <ul>
+        {recipes &&
+          recipes.map((recipe, i) => (
+            <li key={i}>
+              <Recipe recipe={recipe} />
+            </li>
+          ))}
+      </ul>
+    </div>
+  );
 };
 
 export default Recipes;

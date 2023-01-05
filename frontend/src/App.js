@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import { Route, Routes } from "react-router-dom";
 import Recipes from "./components/Recipe/Recipes";
 import AddRecipe from "./components/AddRecipe";
-import ViewRecipe from "./components/ViewRecipe";
+import ViewRecipe from "./components/Recipe/ViewRecipe";
 import RecipeEdit from "./components/Recipe/RecipeEdit";
 
 function App() {

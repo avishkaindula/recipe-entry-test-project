@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AppBar, Tab, Tabs, Toolbar, Typography } from "@mui/material";
+import { AppBar, Button, Tab, Tabs, Toolbar, Typography } from "@mui/material";
 import LunchDiningOutlinedIcon from "@mui/icons-material/LunchDiningOutlined";
 import { NavLink } from "react-router-dom";
 
@@ -12,7 +12,14 @@ const Header = () => {
           <Typography>
             <LunchDiningOutlinedIcon />
           </Typography>
+          <Typography variant="h6" sx={{ ml: "2rem" }}>
+            My Recipes
+          </Typography>
+          <Button color="info" variant="outlined" sx={{ ml: "auto" }}>
+            Refresh
+          </Button>
           <Tabs
+            sx={{ ml: "auto" }}
             textColor="inherit"
             indicatorColor="primary"
             value={value}
