@@ -20,7 +20,7 @@ Starting Guide
 => npm start  
 => This will start the frontend server  
 
-=> open the web browser  
+=> open up the web browser  
 => type the following address on the address bar  
 => localhost:3000  
-=> this will now open up the project
+=> this will now open the project
