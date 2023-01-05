@@ -21,5 +21,5 @@ Starting Guide
 
 => open the web browser  
 => type the following address on the address bar  
-=> http://localhost:3000  
+=> localhost:3000  
 => this will now open up the project
