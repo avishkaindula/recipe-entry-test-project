@@ -37,3 +37,7 @@ li {
   padding: 4px;
   text-align: center;
 }
+
+.card p {
+    padding: 3x;
+  }

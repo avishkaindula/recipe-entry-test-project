@@ -15,7 +15,12 @@ const Header = () => {
           <Typography variant="h6" sx={{ ml: "2rem" }}>
             My Recipes
           </Typography>
-          <Button color="info" variant="outlined" sx={{ ml: "auto" }}>
+          <Button
+            onClick={() => window.location.reload(false)}
+            color="info"
+            variant="outlined"
+            sx={{ ml: "auto" }}
+          >
             Refresh
           </Button>
           <Tabs
