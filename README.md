@@ -2,4 +2,4 @@
 
 database used : MongoDB Atlas  
 
-packages used : react , express , material ui , axios , react-router-dom , cors mongoose , nodemon
+packages used : react , express , material ui , axios , react-router-dom , cors , mongoose , nodemon
