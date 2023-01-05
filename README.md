@@ -6,6 +6,7 @@ packages used : react , express , material ui , axios , react-router-dom , cors 
 
 Starting Guide  
 
+=> download and install node.js on the computer  
 => open up the terminal  
 => cd backend  
 => npm install  
