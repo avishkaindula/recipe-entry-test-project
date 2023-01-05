@@ -3,11 +3,13 @@ const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 
 const router = require("./routes/recipe-routes");
+const cors = require("cors");
 
 const app = express();
 
 // Middlewares
 app.use(express.json());
+app.use(cors());
 app.use("/recipes", router);
 
 // Connecting to the MongoDB database and app.listen.
