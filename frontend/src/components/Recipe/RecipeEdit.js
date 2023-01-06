@@ -84,7 +84,7 @@ const RecipeEdit = () => {
               variant="outlined"
               name="description"
             />
-            <FormLabel>Image</FormLabel>
+            <FormLabel>Image - Please add the image as a URL</FormLabel>
             <TextField
               value={inputs.image}
               onChange={handleChange}
