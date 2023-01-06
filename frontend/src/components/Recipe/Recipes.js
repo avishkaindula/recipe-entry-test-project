@@ -4,6 +4,8 @@ import axios from "axios";
 import Recipe from "./Recipe";
 const URL = "http://localhost:5000/recipes";
 
+// This holds the recipes list
+
 const fetchHandler = async () => {
   return await axios.get(URL).then((res) => res.data);
 };

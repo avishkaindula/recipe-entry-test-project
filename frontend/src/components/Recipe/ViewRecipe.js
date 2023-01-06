@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "./View.css";
+import classes from "./ViewRecipe.module.css";
+
+// This holds the details of a single recipe
 
 const ViewRecipe = () => {
   const [inputs, setInputs] = useState();
@@ -19,11 +21,26 @@ const ViewRecipe = () => {
   return (
     <div>
       {inputs && (
-        <div className="card">
-          <img src={inputs.image} alt={inputs.name} />
-          <h3>{inputs.name}</h3>
-          <p>{inputs.description}</p>
-          <p>{inputs.ingredients}</p>
+        <div className={classes.card}>
+          <div className={classes.image}>
+            <img src={inputs.image} alt={inputs.name} />
+          </div>
+          <div className={classes.content}>
+            <h3>{inputs.name}</h3>
+            <p className={classes.sub}>Ingredients</p>
+          </div>
+          <div className={classes.list}>
+            <ul>
+              {inputs.ingredients.map((ingredient) => {
+                return <li className={classes.singles}>{ingredient}</li>;
+              })}
+            </ul>
+          </div>
+          <div className={classes.content}>
+            <p className={classes.sub}>Description</p>
+            <br />
+            <p>{inputs.description}</p>
+          </div>
         </div>
       )}
     </div>

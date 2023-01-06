@@ -4,13 +4,13 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./Recipe.css";
 
+// This will hold the single recipe items
+
 const Recipe = (props) => {
   const history = useNavigate();
   const { _id, name, image } = props.recipe;
   const deleteHandler = async () => {
-    let result = window.confirm(
-      "Are you sure you want to delete the recipe?"
-    );
+    let result = window.confirm("Are you sure you want to delete the recipe?");
     if (result) {
       await axios
         .delete(`http://localhost:5000/recipes/${_id}`)

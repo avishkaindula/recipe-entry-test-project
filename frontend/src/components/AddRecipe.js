@@ -4,6 +4,8 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+// This holds the form to add recipes
+
 const AddRecipe = () => {
   const history = useNavigate();
   const [inputs, setInputs] = useState({

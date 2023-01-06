@@ -3,6 +3,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+// This holds the form to edit recipes
+
 const RecipeEdit = () => {
   const [inputs, setInputs] = useState();
   const id = useParams().id;
