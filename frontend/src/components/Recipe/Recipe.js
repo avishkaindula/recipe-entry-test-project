@@ -8,13 +8,16 @@ const Recipe = (props) => {
   const history = useNavigate();
   const { _id, name, image } = props.recipe;
   const deleteHandler = async () => {
-    // let result = Window.confirm("Are you sure you want to delete the recipe?");
-    // if (result) {}
-    await axios
-      .delete(`http://localhost:5000/recipes/${_id}`)
-      .then((res) => res.data)
-      .then(() => history("/"))
-      .then(() => window.location.reload(false))
+    let result = window.confirm(
+      "Are you sure you want to delete the recipe?"
+    );
+    if (result) {
+      await axios
+        .delete(`http://localhost:5000/recipes/${_id}`)
+        .then((res) => res.data)
+        .then(() => history("/"))
+        .then(() => window.location.reload(false));
+    }
   };
 
   return (
